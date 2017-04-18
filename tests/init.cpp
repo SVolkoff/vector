@@ -31,10 +31,10 @@ SCENARIO("=")
 	vector.push_back(1); 
 	vector.push_back(2);  
 	REQUIRE(vector.size() == 2); 
-	REQUIRE(vector.capacity() == 5); 
+	REQUIRE(vector.capacity() == 6); 
 	vector2 = vector; 
 	REQUIRE(vector2.size() == 2); 
-	REQUIRE(vector2.capacity() == 5);
+	REQUIRE(vector2.capacity() == 6);
 	REQUIRE(vector2[0]==1);
 	REQUIRE(vector2[1]==2);
 } 
@@ -45,7 +45,7 @@ SCENARIO("push_back")
 	vector.push_back(2);
 	vector.push_back(3);
 	REQUIRE(vector.size() == 5);
-	REQUIRE(vector.capacity() == 10);
+	REQUIRE(vector.capacity() == 7);
 	REQUIRE(vector[0] == 0);
 	REQUIRE(vector[1] == 0);
 	REQUIRE(vector[2] == 1);
