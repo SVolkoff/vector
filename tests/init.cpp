@@ -25,4 +25,18 @@ SCENARIO("vector init with object")
 	REQUIRE(vector[0] == vector2[0]);
 	REQUIRE(vector[1] == vector2[1]);
 }
+SCENARIO("=")
+{ 
+	vector_t vector, vector2(2); 
+	vector.push_back(1); 
+	vector.push_back(2);  
+	REQUIRE(vector.size() == 2); 
+	REQUIRE(vector.capacity() == 5); 
+	vector2 = vector; 
+	REQUIRE(vector2.size() == 2); 
+	REQUIRE(vector2.capacity() == 5;
+	REQUIRE(vector2[0]==1);
+	REQUIRE(vector2[1]==2);
+} 
+
 
