@@ -48,7 +48,7 @@ SCENARIO("push_back")
 	REQUIRE(vector.capacity() == 10);
 	REQUIRE(vector[0] == 0);
 	REQUIRE(vector[1] == 0);
-	REQUIRE(vector[2] == 1;
+	REQUIRE(vector[2] == 1);
 	REQUIRE(vector[3] == 2);
 	REQUIRE(vector[4] == 3);
 }
