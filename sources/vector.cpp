@@ -67,21 +67,25 @@ auto vector_t::push_back(int value) -> void
 	ptr_[size_] = value;
 	size_++;
 }
-auto vector_t::delval() -> bool
+auto vector_t::delval() -> int
 {
-	if (capacity_ == 0)
-		return 0;
-	if (capacity_ >= 2*(size_-1))
+	if (size_ == 0)
 	{
-		capacity_ = capacity_/2;
-		int *ptr1 = new int[capacity_];
-		for (unsigned int i = 0; i < size_-1; i++)
-			ptr1[i] = ptr_[i];
-		delete[] ptr_;
-		ptr_ = ptr1;
+		system("pause");
+		exit(1);
 	}
+	if (capacity_ >= 2 * (size_ - 1))
+	{
+		capacity_ = capacity_ / 2;	
+	}
+	int *ptr1 = new int[capacity_];
+	for (unsigned int i = 0; i < size_ - 1; i++)
+		ptr1[i] = ptr_[i];
+	int n= ptr_[size_ - 1];
+	delete[] ptr_;
+	ptr_ = ptr1;
 	size_--;
-	return 1;
+	return n;
 }
 auto vector_t::operator[](unsigned int index)  const noexcept -> int
 {
