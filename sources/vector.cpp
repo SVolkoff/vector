@@ -69,7 +69,7 @@ auto vector_t::push_back(int value) -> void
 }
 auto vector_t::delval() -> bool
 {
-	if (capacity_ == 0)
+	if (size_ == 0)
 		return 0;
 	if (capacity_ >= 2*size_)
 	{
