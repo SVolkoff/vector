@@ -69,7 +69,7 @@ SCENARIO("delete")
 	REQUIRE(vector.capacity() == 8);
 	REQUIRE(vector.delval()==1);
 	REQUIRE(vector.size() == 4);
-	REQUIRE(vector.capacity() == 4);
+	REQUIRE(vector.capacity() == 8);
 	REQUIRE(vector.delval()==1);
 	REQUIRE(vector.size() == 3);
 	REQUIRE(vector.capacity() == 4);
@@ -78,9 +78,9 @@ SCENARIO("delete")
 	REQUIRE(vector.capacity() == 2);
 	REQUIRE(vector.delval()==1);
 	REQUIRE(vector.size() == 1);
-	REQUIRE(vector.capacity() == 1);
+	REQUIRE(vector.capacity() == 2);
 	REQUIRE(vector.delval()==1);
 	REQUIRE(vector.size() == 0);
-	REQUIRE(vector.capacity() == 0);
+	REQUIRE(vector.capacity() == 1);
 	REQUIRE(vector.delval()==0);
 }
