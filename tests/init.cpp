@@ -82,5 +82,4 @@ SCENARIO("delete")
 	REQUIRE(vector.delval()==0);
 	REQUIRE(vector.size() == 0);
 	REQUIRE(vector.capacity() == 0);
-	REQUIRE(vector.delval()==0);
 }
