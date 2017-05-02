@@ -69,13 +69,13 @@ auto vector_t::push_back(int value) -> void
 }
 auto vector_t::delval() -> bool
 {
-	if (size_ == 0)
+	if (capacity_ == 0)
 		return 0;
-	if (capacity_ >= 2*size_)
+	if (capacity_ >= 2*(size_-1))
 	{
 		capacity_ = capacity_/2;
 		int *ptr1 = new int[capacity_];
-		for (unsigned int i = 0; i < size_; i++)
+		for (unsigned int i = 0; i < size_-1; i++)
 			ptr1[i] = ptr_[i];
 		delete[] ptr_;
 		ptr_ = ptr1;
