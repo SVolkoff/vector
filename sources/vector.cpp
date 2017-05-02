@@ -57,7 +57,7 @@ auto vector_t::push_back(int value) -> void
 	}
 	if (capacity_ == size_)
 	{
-		capacity_ = capacity_ + 5;
+		capacity_ = capacity_ * 2;
 		int *ptr1 = new int[capacity_];
 		for (unsigned int i = 0; i < size_; i++)
 			ptr1[i] = ptr_[i];
@@ -66,6 +66,22 @@ auto vector_t::push_back(int value) -> void
 	}
 	ptr_[size_] = value;
 	size_++;
+}
+auto vector_t::delval() -> bool
+{
+	if (capacity_ == 0)
+		return 0;
+	if (capacity_ >= 2*size_)
+	{
+		capacity_ = capacity_/2;
+		int *ptr1 = new int[capacity_];
+		for (unsigned int i = 0; i < size_; i++)
+			ptr1[i] = ptr_[i];
+		delete[] ptr_;
+		ptr_ = ptr1;
+	}
+	size_--;
+	return 1;
 }
 auto vector_t::operator[](unsigned int index)  const noexcept -> int
 {
